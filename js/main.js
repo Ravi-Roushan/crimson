@@ -844,7 +844,7 @@
 
       // Send post request (fallback to submit.php on server, use Node api on localhost)
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      const endpoint = isLocal ? '/api/submit-form' : 'submit.php';
+      const endpoint = window.location.hostname.endsWith('.vercel.app') ? '/api/submit-form' : 'submit.php';
 
       fetch(endpoint, {
         method: 'POST',

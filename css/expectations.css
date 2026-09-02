@@ -138,9 +138,11 @@
         #FFF0D3 33%,
         rgba(255, 240, 211, 0) 42%
       ),
-      url('../assets/banners/mobile_expectations.webp') !important;
+      url('../assets/banners/mobile_expectations.png') !important;
     background-position: center top, center bottom !important;
     background-size: 100% 100%, cover !important;
+    background-attachment: scroll !important;
+    will-change: auto !important;
     background-repeat: no-repeat !important;
   }
 

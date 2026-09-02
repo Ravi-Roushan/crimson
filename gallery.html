@@ -300,6 +300,17 @@
   scrollbar-width:none !important;
 }
 #crimbot-chat-log::-webkit-scrollbar{width:0 !important;height:0 !important;display:none !important;}
+/* Rare Presence: remove artificial zoom/crop; show the complete source frame. */
+.rare-presence__video,
+.rare-presence__video_mobile{
+  transform:translate(-50%, -50%) !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  width:100% !important;
+  height:100% !important;
+}
 </style>
 
 </head>

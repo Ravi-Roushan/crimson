@@ -19,30 +19,21 @@
   const unmuteIcon = document.getElementById('unmuteIcon');
 
   if (heroVideo && heroMuteBtn) {
-    // Start the banner with its soundtrack enabled.
-    heroVideo.defaultMuted = false;
-    heroVideo.muted = false;
+    // Start muted so browser autoplay is allowed immediately.
+    heroVideo.defaultMuted = true;
+    heroVideo.muted = true;
     heroVideo.volume = 1;
-    updateMuteButtonUI(false);
+    updateMuteButtonUI(true);
 
-    // Browsers can block autoplay with audio until the visitor first interacts
-    // with the page. Keep the requested unmuted state and resume at that point.
+    // Start the hero video automatically. Do not attach any global
+    // pointer/keyboard handler, so clicking other controls (including
+    // CrimBot) cannot accidentally start the video.
     const initialPlay = heroVideo.play();
     if (initialPlay && typeof initialPlay.catch === 'function') {
-      initialPlay.catch(function () {
-        function resumeHeroWithSound() {
-          document.removeEventListener('pointerdown', resumeHeroWithSound);
-          document.removeEventListener('keydown', resumeHeroWithSound);
-          heroVideo.muted = false;
-          heroVideo.play().catch(function () {});
-        }
-
-        document.addEventListener('pointerdown', resumeHeroWithSound, { once: true });
-        document.addEventListener('keydown', resumeHeroWithSound, { once: true });
-      });
+      initialPlay.catch(function () {});
     }
 
-    // Toggle mute on button click
+    // The volume button is the only control that changes the video's audio.
     heroMuteBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       const isMuted = heroVideo.muted;
@@ -91,6 +82,7 @@
     // Never leave the banner covered if the video is delayed or unavailable.
     window.setTimeout(dismissHeroLoader, 8000);
   }
+
 
   /* Lazy-load non-hero background videos near the viewport. */
   const lazyBackgroundVideos = document.querySelectorAll(

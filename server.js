@@ -171,11 +171,16 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`============================================================`);
-  console.log(`   THE CRIMSON SERVER IS RUNNING ON PORT ${PORT}`);
-  console.log(`   Local URL: http://localhost:${PORT}`);
-  console.log(`============================================================`);
-});
+// Export the Express app for Vercel/serverless use.
+// Keep the local npm start behavior unchanged.
+module.exports = app;
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`============================================================`);
+    console.log(`   THE CRIMSON SERVER IS RUNNING ON PORT ${PORT}`);
+    console.log(`   Local URL: http://localhost:${PORT}`);
+    console.log(`============================================================`);
+  });
+}

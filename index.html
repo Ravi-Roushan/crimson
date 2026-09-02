@@ -266,6 +266,129 @@
 #crimbot-chat-log::-webkit-scrollbar{width:0 !important;height:0 !important;display:none !important;}
 </style>
 
+<style id="crimbot-layout-and-logo-final">
+/* Requested fixes only: transparent Crimson logo + floating CrimBot above volume. */
+.navbar__logo, .footer__brand, .navbar__logo img, .footer__logo-img{background:transparent !important;box-shadow:none !important;}
+#crimbot-launcher{position:fixed !important;width:44px !important;height:44px !important;padding:0 !important;margin:0 !important;background:transparent !important;border:0 !important;box-shadow:none !important;display:grid !important;place-items:center !important;z-index:2147483646 !important;pointer-events:auto !important;}
+#crimbot-launcher .crimbot-mark{width:44px !important;height:44px !important;border:0 !important;border-radius:0 !important;background:transparent !important;box-shadow:none !important;display:grid !important;place-items:center !important;}
+#crimbot-launcher .crimbot-robot{width:34px !important;height:34px !important;}
+#crimbot-panel{z-index:2147483645 !important;display:none !important;}
+#crimbot-panel.is-open{display:flex !important;}
+@media(max-width:768px){
+  #crimbot-launcher{width:38px !important;height:38px !important;}
+  #crimbot-launcher .crimbot-mark{width:38px !important;height:38px !important;}
+  #crimbot-launcher .crimbot-robot{width:30px !important;height:30px !important;}
+}
+</style>
+
+<style id="crimbot-scroll-size-final">
+#crimbot-launcher{position:fixed!important;width:46px!important;height:46px!important;right:39px!important;bottom:calc(6.8vh + 52px)!important;left:auto!important;top:auto!important;padding:0!important;margin:0!important;display:grid!important;place-items:center!important;background:transparent!important;border:0!important;box-shadow:none!important;z-index:2147483646!important;visibility:visible!important;}
+#crimbot-launcher .crimbot-mark{width:46px!important;height:46px!important;display:grid!important;place-items:center!important;background:transparent!important;border:0!important;border-radius:0!important;overflow:visible!important;box-shadow:none!important;}
+#crimbot-launcher .crimbot-robot{position:relative!important;width:36px!important;height:36px!important;display:block!important;}
+#crimbot-launcher .crimbot-antenna{left:16px!important;top:0!important;width:3px!important;height:7px!important;}
+#crimbot-launcher .crimbot-antenna::after{left:-2px!important;top:-5px!important;width:7px!important;height:7px!important;}
+#crimbot-launcher .crimbot-robot-head{left:6px!important;top:8px!important;width:24px!important;height:19px!important;border-radius:7px 7px 6px 6px!important;}
+#crimbot-launcher .crimbot-eye{top:5px!important;width:3px!important;height:3px!important;}
+#crimbot-launcher .crimbot-eye:first-child{left:5px!important;}
+#crimbot-launcher .crimbot-eye:nth-child(2){right:5px!important;}
+#crimbot-launcher .crimbot-smile{left:8px!important;bottom:2px!important;width:8px!important;height:4px!important;}
+#crimbot-launcher .crimbot-ear{top:13px!important;width:5px!important;height:8px!important;border-radius:2px!important;}
+#crimbot-launcher .crimbot-ear-left{left:0!important;}
+#crimbot-launcher .crimbot-ear-right{right:0!important;}
+#crimbot-launcher .crimbot-online{right:0!important;top:0!important;width:9px!important;height:9px!important;}
+#crimbot-panel{z-index:2147483645!important;}
+@media(max-width:768px){
+#crimbot-launcher{width:40px!important;height:40px!important;right:19px!important;bottom:calc(5.8vh + 46px)!important;}
+#crimbot-launcher .crimbot-mark{width:40px!important;height:40px!important;}
+#crimbot-launcher .crimbot-robot{width:32px!important;height:32px!important;}
+#crimbot-launcher .crimbot-antenna{left:14px!important;}
+#crimbot-launcher .crimbot-robot-head{left:5px!important;top:7px!important;width:22px!important;height:17px!important;}
+#crimbot-launcher .crimbot-ear{top:12px!important;width:5px!important;height:7px!important;}
+#crimbot-launcher .crimbot-eye{top:4px!important;}
+#crimbot-launcher .crimbot-eye:first-child{left:4px!important;}
+#crimbot-launcher .crimbot-eye:nth-child(2){right:4px!important;}
+#crimbot-launcher .crimbot-smile{left:7px!important;width:8px!important;}
+}
+</style>
+<style id="crimbot-final-volume-anchor-fix">
+/* Final CrimBot fix: stay directly above the real volume button; panel opens above the robot. */
+#crimbot-launcher{position:fixed!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;visibility:visible!important;z-index:2147483646!important;pointer-events:auto!important;}
+#crimbot-panel{z-index:2147483645!important;}
+@media(max-width:768px){#crimbot-panel{max-width:calc(100vw - 20px)!important;}}
+</style>
+
+<style id="crimbot-final-visible-stable">
+/* Final stable launcher: fixed above the site's volume control. */
+#crimbot-launcher{
+  position:fixed!important;
+  left:auto!important;
+  top:auto!important;
+  right:40px!important;
+  bottom:calc(6.8vh + 53px)!important;
+  width:46px!important;
+  height:46px!important;
+  visibility:visible!important;
+  opacity:1!important;
+  display:grid!important;
+  place-items:center!important;
+  z-index:2147483647!important;
+  pointer-events:auto!important;
+}
+#crimbot-launcher .crimbot-mark{width:46px!important;height:46px!important;display:grid!important;place-items:center!important;overflow:visible!important;}
+#crimbot-launcher .crimbot-robot{width:36px!important;height:36px!important;display:block!important;}
+#crimbot-panel{z-index:2147483646!important;}
+@media(max-width:768px){
+ #crimbot-launcher{right:20px!important;bottom:calc(5.8vh + 47px)!important;width:40px!important;height:40px!important;}
+ #crimbot-launcher .crimbot-mark{width:40px!important;height:40px!important;}
+ #crimbot-launcher .crimbot-robot{width:32px!important;height:32px!important;}
+}
+</style>
+<style id="crimbot-panel-final-no-overlap">
+/* Final positioning only: launcher follows volume; panel stays above launcher. */
+#crimbot-launcher{position:fixed!important;z-index:2147483647!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;}
+#crimbot-panel{z-index:2147483646!important;min-height:0!important;}
+.crimbot-body{min-height:0!important;}
+</style>
+
+<style id="crimbot-cute-compact-final">
+/* Only the launcher artwork: compact, cute and clearly separated from the chat input. */
+#crimbot-launcher .crimbot-mark{background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important;}
+#crimbot-launcher .crimbot-robot{width:30px!important;height:30px!important;}
+#crimbot-launcher .crimbot-robot-head{border-width:1.4px!important;border-radius:8px!important;}
+#crimbot-launcher .crimbot-eye{border-radius:50%!important;}
+#crimbot-launcher .crimbot-ear{border-radius:3px!important;}
+#crimbot-launcher .crimbot-smile{border-radius:0 0 8px 8px!important;}
+@media(max-width:768px){#crimbot-launcher .crimbot-robot{width:27px!important;height:27px!important;}}
+</style>
+<style id="crimbot-approved-robot-and-fixed-position-final">
+/* Preserve the approved cute robot; only stabilize its fixed position above volume. */
+#crimbot-launcher{position:fixed!important;right:39px!important;bottom:calc(6.8vh + 52px)!important;left:auto!important;top:auto!important;width:46px!important;height:46px!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;z-index:2147483647!important;}
+#crimbot-launcher .crimbot-mark{width:46px!important;height:46px!important;display:grid!important;place-items:center!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;}
+#crimbot-launcher .crimbot-robot{width:36px!important;height:36px!important;display:block!important;}
+#crimbot-launcher .crimbot-antenna{left:16px!important;top:0!important;width:3px!important;height:7px!important;}
+#crimbot-launcher .crimbot-antenna::after{left:-2px!important;top:-5px!important;width:7px!important;height:7px!important;}
+#crimbot-launcher .crimbot-robot-head{left:6px!important;top:8px!important;width:24px!important;height:19px!important;border-radius:7px 7px 6px 6px!important;}
+#crimbot-launcher .crimbot-eye{top:5px!important;width:3px!important;height:3px!important;}
+#crimbot-launcher .crimbot-eye:first-child{left:5px!important;}
+#crimbot-launcher .crimbot-eye:nth-child(2){right:5px!important;}
+#crimbot-launcher .crimbot-smile{left:8px!important;bottom:2px!important;width:8px!important;height:4px!important;}
+#crimbot-launcher .crimbot-ear{top:13px!important;width:5px!important;height:8px!important;border-radius:2px!important;}
+#crimbot-launcher .crimbot-ear-left{left:0!important;}
+#crimbot-launcher .crimbot-ear-right{right:0!important;}
+#crimbot-launcher .crimbot-online{right:0!important;top:0!important;width:9px!important;height:9px!important;}
+@media(max-width:768px){
+ #crimbot-launcher{right:19px!important;bottom:calc(5.8vh + 46px)!important;width:40px!important;height:40px!important;}
+ #crimbot-launcher .crimbot-mark{width:40px!important;height:40px!important;}
+ #crimbot-launcher .crimbot-robot{width:32px!important;height:32px!important;}
+ #crimbot-launcher .crimbot-antenna{left:14px!important;}
+ #crimbot-launcher .crimbot-robot-head{left:5px!important;top:7px!important;width:22px!important;height:17px!important;}
+ #crimbot-launcher .crimbot-ear{top:12px!important;width:5px!important;height:7px!important;}
+ #crimbot-launcher .crimbot-eye{top:4px!important;}
+ #crimbot-launcher .crimbot-eye:first-child{left:4px!important;}
+ #crimbot-launcher .crimbot-eye:nth-child(2){right:4px!important;}
+ #crimbot-launcher .crimbot-smile{left:7px!important;width:8px!important;}
+}
+</style>
 </head>
 <body>
 <!-- ═══════════════════════════════════════════════
@@ -275,7 +398,7 @@
 <div class="navbar__inner">
 <!-- Logo -->
 <a aria-label="The Crimson Borivali – Home" class="navbar__logo" href="#hero">
-<img alt="The Crimson Borivali" decoding="async" height="52" src="assets/Logo/Asset 2-8.webp" width="140"/>
+<img alt="The Crimson Borivali" decoding="async" height="52" src="assets/Logo/crimson-logo-clear.webp" width="140"/>
 </a>
 <!-- Desktop navigation — centred via grid -->
 <nav aria-label="Main navigation" class="navbar__nav">
@@ -1264,7 +1387,7 @@
 <div class="footer__container">
 <!-- Brand Info (Left Column) -->
 <div class="footer__brand">
-<img alt="The Crimson Borivali Logo" class="footer__logo-img" decoding="async" height="252" loading="lazy" src="assets/Logo/Asset 2-8.webp" width="442"/>
+<img alt="The Crimson Borivali Logo" class="footer__logo-img" decoding="async" height="252" loading="lazy" src="assets/Logo/crimson-logo-clear.webp" width="442"/>
 <!-- Social Icons -->
 <div class="footer__socials">
 <a aria-label="Instagram" class="footer__social-link" href="https://www.instagram.com/imbuildcon/" rel="noopener noreferrer" target="_blank">
@@ -1286,7 +1409,7 @@
 <div class="footer__info-grid">
 <!-- MahaRERA Details -->
 <div class="footer__rera-box">
-<img alt="MahaRERA Registration PR1180002502101" class="footer__rera-qr" decoding="async" height="77" loading="lazy" src="assets/arrows/qr-abhi.webp" width="83"/>
+<img alt="MahaRERA Registration PR1180002502101" class="footer__rera-qr" decoding="async" height="77" loading="lazy" src="assets/arrows/qr abhi.webp" width="83"/>
 <div class="footer__rera-text">
 <span class="footer__rera-label">MahaRERA Number :</span>
 <span class="footer__rera-number">PR1180002502101</span>
@@ -1329,7 +1452,7 @@
   </button>
   <section id="crimbot-panel" aria-label="CrimBot AI assistant">
     <div class="crimbot-head"><div><div class="crimbot-title">CrimBot AI</div><div class="crimbot-status"><i></i> Online</div></div><button id="crimbot-close" class="crimbot-close" type="button" aria-label="Close">×</button></div>
-    <div class="crimbot-body"><div class="crimbot-msg">Ask about The Crimson, Interior, Exterior, amenities, location, gallery or private preview.</div><div id="crimbot-answer" class="crimbot-answer"><div id="crimbot-chat-log" role="log" aria-live="polite"><div class="crimbot-chat-bot">Hello. I’m CrimBot AI. How can I help with The Crimson?</div></div></div><div class="crimbot-quick"><button type="button" data-q="location">Location</button><button type="button" data-q="interior">Interior</button><button type="button" data-q="exterior">Exterior</button><button type="button" data-q="amenities">Amenities</button><button type="button" data-q="gallery">Gallery</button><button type="button" data-q="preview">Private Preview</button></div></div>
+    <div class="crimbot-body"><div id="crimbot-answer" class="crimbot-answer"><div id="crimbot-chat-log" role="log" aria-live="polite"><div class="crimbot-chat-bot crimbot-intro">Ask about The Crimson, Interior, Exterior, amenities, location, gallery or private preview.</div><div class="crimbot-chat-bot">Hello. I’m CrimBot AI. How can I help with The Crimson?</div></div></div><div class="crimbot-quick"><button type="button" data-q="location">Location</button><button type="button" data-q="interior">Interior</button><button type="button" data-q="exterior">Exterior</button><button type="button" data-q="amenities">Amenities</button><button type="button" data-q="gallery">Gallery</button><button type="button" data-q="preview">Private Preview</button></div></div>
     <div class="crimbot-input"><input id="crimbot-input" type="text" placeholder="Ask about The Crimson…" aria-label="Ask CrimBot AI"/><button id="crimbot-send" type="button">Send</button></div>
   </section>
   <script src="js/crimbot.js" defer></script>
